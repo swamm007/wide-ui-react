@@ -36,10 +36,17 @@ export const Button: React.FC<buttonProps> = (props) => {
     [`wide-btn-${type}`]: true,
     [`wide-btn-${size}`]: size,
     "wide-btn-disabled": disabled,
+    "wide-btn-link-disabled": disabled && type === 'link',
     "wide-btn-round": shape === "round", // 这种字符串直接比对的应改为常量类型去控制todo
     "wide-btn-circle": shape === "circle",
     "wide-btn-danger": danger,
   });
+
+  const btnClick: btnClickType = (event : any) => {
+    if (!disabled && onClick) {
+      onClick(event)
+    }
+  }
   if (type === "link") {
     return (
       <a
@@ -47,24 +54,23 @@ export const Button: React.FC<buttonProps> = (props) => {
         href={href}
         target={target}
         onClick={(e) =>
-          onClick && onClick(e as React.MouseEvent<HTMLAnchorElement>)
+          btnClick(e)
         }
       >
         {children}
       </a>
     );
-  } else {
-    return (
-      <button
-        className={btnClassName}
-        disabled={disabled}
-        type={htmlType}
-        onClick={(e) => onClick && onClick(e)}
-      >
-        {children}
-      </button>
-    );
   }
+  return (
+    <button
+      className={btnClassName}
+      disabled={disabled}
+      type={htmlType}
+      onClick={(e) => btnClick(e)}
+    >
+      {children}
+    </button>
+  );
 };
 Button.defaultProps = {
   type: "default",

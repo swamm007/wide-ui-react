@@ -8,27 +8,50 @@
   border: $btn-border-width solid;
   border-radius: $btn-border-radius;
   box-shadow: $btn-box-shadow;
-  cursor: pointer;
-  margin-right: 8px;
+  cursor: $btn-cursor;
+  transition: $btn-transition;
+  -webkit-transition: $btn-transition;
+  -moz-transition: $btn-transition;
+  -ms-transition: $btn-transition;
+  -o-transition: $btn-transition;
   &:disabled {
-    background: $light;
-    color: $gray-600;
-    cursor: not-allowed;
+    background: $btn-disabled-background;
+    color: $btn-disabled-color;
+    cursor: $btn-disabled-cursor;
     opacity: $btn-disabled-opacity;
   }
 }
+
 .wide-btn-primary {
-  background: $primary;
-  color: $white;
+  background: $btn-primary-background;
+  color: $btn-primary-color;
+  &:hover {
+    background: $btn-primary-hover-background;
+  }
+  &:focus {
+    background: $btn-primary-focus-background;
+  }
   &:disabled {
-    border: none;
-    background: $light;
+    border: $btn-primary-disabled-border;
+    background: $btn-primary-disabled-background;
   }
 }
+
 .wide-btn-default {
-  border-color: $btn-boder-color;
-  background: transparent;
+  border-color: $btn-default-border-color;
+  background: $btn-default-background;
+  &:hover {
+    color: $btn-default-hover-color;
+    border-color: $btn-default-border-hover-color;
+    background: $btn-default-hover-background;
+  }
+  &:focus {
+    color: $btn-default-focus-color;
+    border-color: $btn-default-border-focus-color;
+    background: $btn-default-focus-background;
+  }
 }
+
 .wide-btn-text {
   border: $btn-text-border;
   color: $btn-text-color;
@@ -38,11 +61,32 @@
     color: $btn-text-disabled-color
   }
 }
+
+
+.wide-btn-link, .wide-btn-link:not([href]) {
+  color: $btn-link-color;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  &:hover {
+    color: $btn-link-hover-color;
+  }
+}
+.wide-btn-link-disabled {
+  color: $btn-link-disabled-color!important;
+  &:hover {
+    color: $btn-link-disabled-color!important;
+    cursor: $btn-link-disabled-cursor;
+  }
+}
+
+
 .wide-btn-large {
   font-size: $btn-font-size-lg;
   padding: $btn-padding-y-lg $btn-padding-x-lg;
   border-radius: $btn-border-radius-lg;
 }
+
 .wide-btn-small {
   font-size: $btn-font-size-sm;
   padding: $btn-padding-y-sm $btn-padding-x-sm;
