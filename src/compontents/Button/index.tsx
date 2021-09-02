@@ -4,8 +4,7 @@ export type buttonType = "primary" | "default" | "text" | "link";
 export type shapeType = "circle" | "round";
 export type htmlType = "button" | "submit" | "reset" | undefined;
 export type sizeType = "large" | "middle" | "small";
-export type btnClickType = ((e: React.MouseEvent<HTMLButtonElement>) => void) &
-  ((e: React.MouseEvent<HTMLAnchorElement>) => void);
+export type btnClickType = (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void
 export interface buttonProps {
   className?: string;
   type?: buttonType;
@@ -42,7 +41,7 @@ export const Button: React.FC<buttonProps> = (props) => {
     "wide-btn-danger": danger,
   });
 
-  const btnClick: btnClickType = (event : any) => {
+  const btnClick:btnClickType = (event) => {
     if (!disabled && onClick) {
       onClick(event)
     }
