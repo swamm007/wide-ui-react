@@ -48,6 +48,9 @@ $btn-default-border-hover-color:   $primaryLight !default;
 $btn-default-border-focus-color:   $primaryLight !default; 
 $btn-default-hover-background:     $white !default; 
 $btn-default-focus-background:     $white !default; 
+$btn-default-disabled-background: $light !default;
+$btn-default-disabled-border:     none !default;
+
 
 // 链接按钮
 $btn-link-color:              $link-color !default;
@@ -65,5 +68,7 @@ $btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
+// 危险按钮 用户需谨慎操作
+$btn-danger-background:            $danger !default;
 // 按钮变化的动画
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;

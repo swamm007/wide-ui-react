@@ -2,6 +2,10 @@ import classnames from "classnames";
 // 此处换成enum是不是更合适
 export type buttonType = "primary" | "default" | "text" | "link";
 export type shapeType = "circle" | "round";
+export enum shapeEnum {
+  circle = "circle",
+  round = "round"
+}
 export type htmlType = "button" | "submit" | "reset" | undefined;
 export type sizeType = "large" | "middle" | "small";
 export type btnClickType = (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void
@@ -36,9 +40,9 @@ export const Button: React.FC<buttonProps> = (props) => {
     [`wide-btn-${size}`]: size,
     "wide-btn-disabled": disabled,
     "wide-btn-link-disabled": disabled && type === 'link',
-    "wide-btn-round": shape === "round", // 这种字符串直接比对的应改为常量类型去控制todo
-    "wide-btn-circle": shape === "circle",
-    "wide-btn-danger": danger,
+    "wide-btn-round": shape === shapeEnum.round,
+    "wide-btn-circle": shape === shapeEnum.circle,
+    "wide-btn-danger": danger && type !== 'link',
   });
 
   const btnClick:btnClickType = (event) => {
@@ -75,7 +79,7 @@ Button.defaultProps = {
   type: "default",
   danger: false,
   disabled: false,
-  shape: "circle",
+  shape: shapeEnum.circle,
   htmlType: "button",
   size: "middle",
 };

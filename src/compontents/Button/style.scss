@@ -50,6 +50,11 @@
     border-color: $btn-default-border-focus-color;
     background: $btn-default-focus-background;
   }
+  &:disabled {
+    border: $btn-default-disabled-border;
+    background: $btn-default-disabled-background;
+    color: $btn-disabled-color;
+  }
 }
 
 .wide-btn-text {
@@ -91,4 +96,20 @@
   font-size: $btn-font-size-sm;
   padding: $btn-padding-y-sm $btn-padding-x-sm;
   border-radius: $btn-border-radius-sm;
+}
+
+.wide-btn-round {
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+}
+
+.wide-btn-danger {
+  background: $btn-danger-background;
+  &:hover {
+    background: $btn-danger-background;
+    opacity: 0.9;
+  }
 }

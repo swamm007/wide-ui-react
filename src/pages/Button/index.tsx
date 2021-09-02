@@ -10,11 +10,15 @@ const TestButton = () => {
         Primary Button
       </Button>
 
+      <Button type="primary" size="small" onClick={goConsole} danger>
+        Primary Button
+      </Button>
+
       <Button type="primary" disabled size="large" onClick={goConsole}>
         Primary(disabled)
       </Button>
 
-      <Button type="default" size="large" onClick={goConsole}>
+      <Button type="default" size="large" onClick={goConsole} shape="round">
         Default Button
       </Button>
 
