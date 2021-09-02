@@ -21,7 +21,7 @@ export interface buttonProps {
   htmlType?: htmlType;
   onClick?: btnClickType;
 }
-export const Button: React.FC<buttonProps> = (props) => {
+const Button: React.FC<buttonProps> = (props) => {
   const {
     type,
     className,
@@ -83,3 +83,5 @@ Button.defaultProps = {
   htmlType: "button",
   size: "middle",
 };
+
+export default Button

@@ -1,4 +1,4 @@
-import {Button} from "../../compontents/Button";
+import Button from "../../compontents/Button";
 import './index.scss';
 const TestButton = () => {
   const goConsole = (e: any) => {

@@ -1,0 +1,10 @@
+.wide-alert {
+    color: #000;
+    background: #f60;
+    width: 100%;
+    padding: 8px 15px;
+    display: flex;
+}
+.wide-alert-success {
+    background: $success;
+}
